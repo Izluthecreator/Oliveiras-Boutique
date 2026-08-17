@@ -1107,7 +1107,7 @@ a {
     background-position: center;
   background-size: cover;
 
-  opacity: 0.14;
+  opacity: 0.10;
 
   filter:
     saturate(0.6)
