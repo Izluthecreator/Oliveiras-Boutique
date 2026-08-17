@@ -1,15 +1,41 @@
 :root {
-  --nude-bg: #dbcbb4;
-  --nude-light: #f8f2e8;
-  --moss: #6e7856;
-  --moss-dark: #48513a;
-  --moss-soft: #dce1ce;
-  --brown: #a47854;
-  --brown-deep: #7c5a3d;
-  --ink: #3a3226;
-  --ink-soft: #6b6152;
-  --line: #b8a78c;
-  --shadow: 0 10px 40px rgba(58, 50, 38, 0.08);
+  /* =====================================================
+     PALETA OLIVEIRAS
+     Terracota + Oliva + Creme + Marrom
+  ===================================================== */
+
+  /* Cor principal inspirada diretamente na logo */
+  --nude-bg: #c4987b;
+
+  /* Creme claro */
+  --nude-light: #f5eee3;
+
+  /* Verde oliva */
+  --moss: #7a8057;
+
+  /* Verde oliva profundo */
+  --moss-dark: #4f5738;
+
+  /* Sálvia suave */
+  --moss-soft: #d9ddc9;
+
+  /* Terracota secundário */
+  --brown: #a87555;
+
+  /* Marrom terroso profundo */
+  --brown-deep: #704a35;
+
+  /* Texto principal */
+  --ink: #3f3028;
+
+  /* Texto secundário */
+  --ink-soft: #756458;
+
+  /* Linhas */
+  --line: #bca590;
+
+  /* Sombra */
+  --shadow: 0 10px 40px rgba(63, 48, 40, 0.1);
 }
 
 /* =========================================================
@@ -29,9 +55,12 @@ html {
 body {
   background: var(--nude-bg);
   color: var(--ink);
+
   font-family: "Jost", sans-serif;
   font-weight: 400;
+
   overflow-x: hidden;
+
   -webkit-font-smoothing: antialiased;
 }
 
@@ -51,16 +80,23 @@ a {
 
 .eyebrow {
   font-family: "Jost", sans-serif;
+
   text-transform: uppercase;
+
   letter-spacing: 0.28em;
+
   font-size: 0.72rem;
+
   font-weight: 500;
+
   color: var(--moss-dark);
 }
 
 .wrap {
   max-width: 1180px;
+
   margin: 0 auto;
+
   padding: 0 6vw;
 }
 
@@ -78,14 +114,16 @@ a {
   z-index: 100;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   height: 165px;
 
   padding: 0 5vw;
 
-  background: rgba(236, 225, 208, 0.96);
+  background: rgba(245, 238, 227, 0.96);
 
   transition:
     background 0.4s ease,
@@ -93,28 +131,29 @@ a {
     box-shadow 0.4s ease;
 }
 
-/* Estado ao rolar */
+/* ---------- NAV AO ROLAR ---------- */
 
 .nav.scrolled {
   height: 110px;
 
-  background: #d7b78a;
+  background: rgba(196, 152, 123, 0.96);
 
   backdrop-filter: blur(10px);
 
-  box-shadow: 0 1px 0 rgba(58, 50, 38, 0.08);
+  box-shadow: 0 1px 0 rgba(63, 48, 40, 0.08);
 }
 
-/* ---------- Logo ---------- */
+/* ---------- MARCA ---------- */
 
 .nav__mark {
   display: flex;
+
   align-items: center;
 
   text-decoration: none;
 }
 
-/* Ícone */
+/* ---------- ÍCONE ---------- */
 
 .nav__mark img {
   width: 120px;
@@ -127,19 +166,20 @@ a {
   margin-right: 26px;
 }
 
-/* Nome Oliveiras */
+/* ---------- NOME OLIVEIRAS ---------- */
 
 .logo-text {
   font-family: "Italianno", cursive;
 
   font-size: 80px;
-  font-weight: 500;
+
+  font-weight: 400;
 
   line-height: 1;
 
   letter-spacing: 10px;
 
-  color: #000000;
+  color: var(--ink);
 
   white-space: nowrap;
 
@@ -148,10 +188,11 @@ a {
   margin-top: 35px;
 }
 
-/* ---------- Menu ---------- */
+/* ---------- MENU ---------- */
 
 .nav__links {
   display: flex;
+
   align-items: center;
 
   gap: 46px;
@@ -209,9 +250,11 @@ a {
   min-height: 100svh;
 
   display: flex;
+
   flex-direction: column;
 
   align-items: center;
+
   justify-content: center;
 
   text-align: center;
@@ -223,21 +266,24 @@ a {
   background:
     radial-gradient(
       ellipse 60% 45% at 50% 18%,
-      rgba(110, 120, 86, 0.1),
+      rgba(122, 128, 87, 0.1),
       transparent 70%
     ),
     radial-gradient(
       ellipse 70% 50% at 50% 100%,
-      rgba(164, 120, 84, 0.12),
+      rgba(168, 117, 85, 0.12),
       transparent 70%
     ),
     var(--nude-bg);
 }
 
-/* ---------- Animação das folhas ---------- */
+/* =========================================================
+   ANIMAÇÃO DAS FOLHAS
+========================================================= */
 
 .leaf-sway {
   transform-origin: center;
+
   animation: sway 7s ease-in-out infinite;
 }
 
@@ -260,7 +306,9 @@ a {
   }
 }
 
-/* ---------- Hero wordmark ---------- */
+/* =========================================================
+   HERO WORDMARK
+========================================================= */
 
 .hero__wordmark {
   position: relative;
@@ -304,6 +352,7 @@ a {
   z-index: 2;
 
   width: 44px;
+
   height: 1px;
 
   background: var(--line);
@@ -343,7 +392,9 @@ a {
   max-width: 32ch;
 }
 
-/* ---------- Scroll ---------- */
+/* =========================================================
+   SCROLL
+========================================================= */
 
 .hero__scroll {
   position: absolute;
@@ -386,19 +437,25 @@ a {
 @keyframes scrolldrop {
   0% {
     transform: scaleY(0.3);
+
     transform-origin: top;
+
     opacity: 0.4;
   }
 
   50% {
     transform: scaleY(1);
+
     transform-origin: top;
+
     opacity: 1;
   }
 
   100% {
     transform: scaleY(0.3);
+
     transform-origin: bottom;
+
     opacity: 0.4;
   }
 }
@@ -431,6 +488,8 @@ a {
   padding: 9rem 0 7rem;
 
   position: relative;
+
+  background: var(--nude-light);
 }
 
 .story__grid {
@@ -489,6 +548,8 @@ a {
   gap: 1rem;
 
   padding: 0 0 2rem;
+
+  background: var(--nude-light);
 }
 
 .divider svg {
@@ -640,6 +701,8 @@ a {
 
 .values {
   padding: 8rem 0 7rem;
+
+  background: var(--nude-light);
 }
 
 .values__top {
@@ -682,12 +745,14 @@ a {
   gap: 0;
 
   border-top: 1px solid var(--line);
+
 }
 
 .value {
   padding: 2.6rem 1.6rem 2.2rem 0;
 
   border-bottom: 1px solid var(--line);
+
 }
 
 .value:not(:last-child) {
@@ -697,6 +762,9 @@ a {
 }
 
 .value svg {
+
+  margin-left: 20px; 
+
   width: 30px;
 
   height: 30px;
@@ -707,6 +775,8 @@ a {
 }
 
 .value h3 {
+  
+  margin-left: 20px;
   font-family: "Fraunces", serif;
 
   font-weight: 500;
@@ -719,6 +789,9 @@ a {
 }
 
 .value p {
+
+  margin-left: 20px;
+  
   font-size: 0.92rem;
 
   line-height: 1.7;
@@ -783,7 +856,7 @@ a {
 
   z-index: 2;
 
-  color: #d9d6c4;
+  color: #e7dfd2;
 
   font-size: 1rem;
 
@@ -807,6 +880,10 @@ a {
 
   flex-wrap: wrap;
 }
+
+/* =========================================================
+   BOTÕES
+========================================================= */
 
 .btn {
   display: inline-flex;
@@ -847,7 +924,7 @@ a {
 }
 
 .btn--outline {
-  border: 1px solid rgba(217, 214, 196, 0.5);
+  border: 1px solid rgba(245, 238, 227, 0.5);
 
   color: var(--nude-light);
 }
@@ -888,6 +965,8 @@ a {
   font-size: 1rem;
 
   margin-bottom: 0.3rem;
+
+  color: var(--ink);
 }
 
 .footer__meta {
@@ -900,9 +979,12 @@ a {
 
 /* =========================================================
    MEDIA QUERIES
+   TODOS OS AJUSTES RESPONSIVOS FICAM AQUI
 ========================================================= */
 
-/* ---------- REDUZIR MOVIMENTO ---------- */
+/* =========================================================
+   ACESSIBILIDADE — REDUZIR MOVIMENTO
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -937,10 +1019,14 @@ a {
 
   .logo-text {
     font-size: 52px;
+
+    letter-spacing: 5px;
   }
 
   .nav__links {
     gap: 22px;
+
+    font-size: 0.75rem;
   }
 }
 
@@ -988,15 +1074,18 @@ a {
 
     justify-content: center;
 
-    background: rgba(236, 225, 208, 0.97);
+    background: rgba(245, 238, 227, 0.97);
 
     backdrop-filter: blur(8px);
 
+    /*
+      Impede que o símbolo ultrapasse
+      o quadrante do cabeçalho.
+    */
     overflow: hidden;
-
   }
 
-  /* ---------- ÁREA DA MARCA ---------- */
+  /* ---------- MARCA ---------- */
 
   .nav__mark {
     position: relative;
@@ -1010,22 +1099,8 @@ a {
     align-items: center;
 
     justify-content: center;
-  }
 
-  /* ---------- LINK DA MARCA ---------- */
-
-  .nav__mark .logo {
-    position: relative;
-
-    width: 100%;
-
-    height: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
+    overflow: hidden;
   }
 
   /* ---------- ÍCONE ATRÁS DO NOME ---------- */
@@ -1039,9 +1114,9 @@ a {
 
     transform: translate(-50%, -50%);
 
-    width: 120px;
+    width: 105px;
 
-    height: 120px;
+    height: 105px;
 
     object-fit: contain;
 
@@ -1049,7 +1124,7 @@ a {
 
     z-index: 0;
 
-    opacity: 1;
+    opacity: 0.4;
 
     pointer-events: none;
   }
@@ -1065,15 +1140,15 @@ a {
 
     font-family: "Italianno", cursive;
 
-    font-size: 68px;
+    font-size: 66px;
 
     font-weight: 400;
 
     line-height: 1;
 
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 
-    color: #62594f;
+    color: var(--ink);
 
     white-space: nowrap;
 
@@ -1117,17 +1192,17 @@ a {
   }
 
   .nav__mark img {
-    width: 112px;
+    width: 98px;
 
-    height: 112px;
+    height: 98px;
 
-    opacity: 0.45;
+    opacity: 0.38;
   }
 
   .logo-text {
     font-size: 61px;
 
-    letter-spacing: 1px;
+    letter-spacing: 0;
   }
 
   .hero {
@@ -1169,9 +1244,11 @@ a {
   }
 
   .nav__mark img {
-    width: 105px;
+    width: 92px;
 
-    height: 105px;
+    height: 92px;
+
+    opacity: 0.36;
   }
 
   .logo-text {
@@ -1194,9 +1271,5 @@ a {
 
   .tree {
     width: 44vw;
-  }
-
-  .nav__mark .logo {
-    overflow: visible;
   }
 }
