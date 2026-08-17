@@ -36,7 +36,7 @@ html {
 }
 
 body {
-  background: var(--nude-bg);
+   background: var(--nude-light);
   color: var(--ink);
   font-family: "Jost", sans-serif;
   font-weight: 400;
