@@ -36,7 +36,31 @@
         <a href="#valores">Propósito</a>
         <a href="#contato">Visite</a>
       </div>
+
+      <!-- BOTÃO HAMBURGUER (mobile) -->
+      <button
+        class="nav__toggle"
+        id="navToggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
+
+    <!-- MENU MOBILE (overlay) -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu__inner">
+        <a href="#historia">História</a>
+        <a href="#oliveiras">As Oliveiras</a>
+        <a href="#valores">Propósito</a>
+        <a href="#contato">Visite</a>
+      </div>
+    </div>
 
     <!-- HERO -->
     <header class="hero">
@@ -380,6 +404,52 @@
     </script>
 
     <script>
+      // MENU HAMBURGUER (mobile)
+      const navToggle = document.getElementById("navToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileLinks = mobileMenu
+        ? mobileMenu.querySelectorAll("a")
+        : [];
+
+      function toggleMenu(forceOpen) {
+        const isOpen =
+          typeof forceOpen === "boolean"
+            ? forceOpen
+            : !mobileMenu.classList.contains("open");
+
+        mobileMenu.classList.toggle("open", isOpen);
+        navToggle.classList.toggle("open", isOpen);
+
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+        navToggle.setAttribute(
+          "aria-label",
+          isOpen ? "Fechar menu" : "Abrir menu",
+        );
+
+        mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+
+        document.body.classList.toggle("menu-open", isOpen);
+      }
+
+      if (navToggle && mobileMenu) {
+        navToggle.addEventListener("click", () => toggleMenu());
+
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", () => toggleMenu(false));
+        });
+
+        window.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") toggleMenu(false);
+        });
+
+        // fecha o menu automaticamente se a tela crescer para desktop
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 720) toggleMenu(false);
+        });
+      }
+    </script>
+
+    <script>
       // parallax das flores no hero
       const hero = document.querySelector(".hero");
       const branchbg = document.querySelector(".hero__branchbg");
@@ -421,4 +491,4 @@
       applyParallax();
     </script>
   </body>
-</html>
+</html> 
