@@ -1,90 +1,50 @@
-Oliveiras Boutique
+🌿 Oliveiras Boutique
 
-Landing page institucional desenvolvida para a Oliveiras Boutique, uma marca de moda feminina criada a partir da união entre mãe e filha.
 
-O projeto busca traduzir visualmente a identidade da marca por meio de uma estética elegante, acolhedora e artesanal, utilizando uma combinação de tons terracota, oliva, creme e marrom, tipografia editorial e elementos inspirados em oliveiras.
+Landing page criada para transmitir a identidade da Oliveiras Boutique de forma elegante, delicada e acolhedora.
 
-Sobre o projeto
+🎨 Design
 
-A página apresenta a história e o propósito da Oliveiras Boutique, destacando a relação familiar por trás da marca e o conceito de que cada peça carrega cuidado, personalidade e significado.
+🌿 Paleta inspirada na natureza: terracota, oliva, creme e marrom
 
-O design foi pensado para transmitir:
+✍️ Combinação de fontes editoriais e manuscritas
 
-Elegância e feminilidade
+🖼️ Imagens de oliveiras integradas ao fundo
 
-Acolhimento e proximidade
+✨ Elementos em SVG para detalhes decorativos
 
-Identidade familiar
+📐 Layout organizado e responsivo
 
-Sofisticação sem excessos
+💻 Desenvolvimento
 
-Referências naturais e artesanais
+🧱 Estrutura construída em HTML5
 
-Estrutura
+🎨 Estilização feita com CSS3
 
-A landing page é composta por:
+⚡ Interações desenvolvidas com JavaScript
 
-Hero — apresentação da marca e slogan
+📱 Adaptação para desktop, tablet e celular
 
-História — origem da boutique e relação entre mãe e filha
+🔄 Animações suaves durante a navegação
 
-As Oliveiras — representação visual das duas gerações
+👀 Elementos aparecem conforme o usuário rola a página
 
-Propósito — valores de beleza, força e autenticidade
+🌳 Experiência
 
-Contato — chamada para conhecer a boutique e acessar o Instagram
+A página foi dividida em seções para contar a história da marca:
 
-Footer — assinatura da marca
+🏠 Hero: apresenta a identidade e o slogan
 
-Tecnologias
+📖 História: mostra a origem da boutique
 
-HTML5
+🌳 As Oliveiras: representa mãe e filha através de duas árvores
 
-CSS3
+💚 Propósito: apresenta os valores da marca
 
-JavaScript
+📲 Contato: direciona para o Instagram
 
-Google Fonts
+✨ Detalhes especiais
 
-SVG
+O projeto utiliza CSS Grid, Flexbox, variáveis CSS, media queries, SVG e animações, criando uma experiência visual leve sem depender de frameworks.
 
-CSS Animations
-
-Intersection Observer API
-
-Responsive Design
-
-Identidade visual
-
-A paleta principal utiliza tons naturais inspirados em terra, madeira, folhas e tecidos:
-
-Terracota  #C4987B
-Creme      #F5EEE3
-Oliva      #7A8057
-Oliva Esc. #4F5738
-Marrom     #A87555
-Marrom Esc. #704A35
-
-A tipografia combina Fraunces, Jost e Italianno, criando contraste entre o editorial, o contemporâneo e o manuscrito.
-
-Responsividade
-
-O layout foi desenvolvido para funcionar em diferentes tamanhos de tela, com adaptações específicas para:
-
-Desktop
-
-Tablet
-
-Celulares
-
-Dispositivos com telas menores
-
-Também foram incluídas configurações para prefers-reduced-motion, reduzindo animações para usuários que optam por minimizar movimento.
-
-Objetivo
-
-Mais do que apresentar produtos, o projeto busca comunicar a essência da Oliveiras Boutique:
-
-Duas gerações, um só sonho.
-
-A experiência foi construída para transformar a identidade da marca em uma presença digital delicada, elegante e memorável.
+A ideia principal foi transformar o conceito de duas gerações cultivando juntas o mesmo sonho em elementos visuais dentro da própria página.
