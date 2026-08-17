@@ -1,6 +1,5 @@
 🌿 Oliveiras Boutique
 
-Amor que se veste
 
 Landing page desenvolvida para apresentar a identidade da Oliveiras Boutique, destacando a história e a união entre mãe e filha.
 
