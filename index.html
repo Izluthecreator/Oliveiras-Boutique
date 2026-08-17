@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5eee3" />
 
-
     <title>Oliveiras Boutique — Amor que se veste</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,6 +55,15 @@
 
     <!-- MENU MOBILE (overlay) -->
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <button
+        class="mobile-menu__close"
+        id="mobileMenuClose"
+        type="button"
+        aria-label="Fechar menu"
+      >
+        &times;
+      </button>
+
       <div class="mobile-menu__inner">
         <a href="#historia">História</a>
         <a href="#oliveiras">As Oliveiras</a>
@@ -409,9 +417,8 @@
       // MENU HAMBURGUER (mobile)
       const navToggle = document.getElementById("navToggle");
       const mobileMenu = document.getElementById("mobileMenu");
-      const mobileLinks = mobileMenu
-        ? mobileMenu.querySelectorAll("a")
-        : [];
+      const mobileMenuClose = document.getElementById("mobileMenuClose");
+      const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll("a") : [];
 
       function toggleMenu(forceOpen) {
         const isOpen =
@@ -432,9 +439,12 @@
 
         document.body.classList.toggle("menu-open", isOpen);
       }
-
       if (navToggle && mobileMenu) {
         navToggle.addEventListener("click", () => toggleMenu());
+
+        if (mobileMenuClose) {
+          mobileMenuClose.addEventListener("click", () => toggleMenu(false));
+        }
 
         mobileLinks.forEach((link) => {
           link.addEventListener("click", () => toggleMenu(false));
@@ -444,7 +454,6 @@
           if (e.key === "Escape") toggleMenu(false);
         });
 
-        // fecha o menu automaticamente se a tela crescer para desktop
         window.addEventListener("resize", () => {
           if (window.innerWidth > 720) toggleMenu(false);
         });
@@ -469,7 +478,6 @@
 
         const rect = hero.getBoundingClientRect();
 
-        // fora da viewport, não precisa atualizar
         if (rect.bottom < 0 || rect.top > window.innerHeight) return;
 
         const speed = 0.38;
@@ -493,4 +501,4 @@
       applyParallax();
     </script>
   </body>
-</html> 
+</html>
