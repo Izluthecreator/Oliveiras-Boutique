@@ -1,50 +1,47 @@
 🌿 Oliveiras Boutique
 
+Amor que se veste
 
-Landing page criada para transmitir a identidade da Oliveiras Boutique de forma elegante, delicada e acolhedora.
+Landing page desenvolvida para apresentar a identidade da Oliveiras Boutique, destacando a história e a união entre mãe e filha.
 
-🎨 Design
+Design
 
-🌿 Paleta inspirada na natureza: terracota, oliva, creme e marrom
+Paleta em tons de terracota, oliva, creme e marrom
 
-✍️ Combinação de fontes editoriais e manuscritas
+Tipografia combinando estilo editorial e manuscrito
 
-🖼️ Imagens de oliveiras integradas ao fundo
+Imagens de oliveiras utilizadas como elementos de identidade visual
 
-✨ Elementos em SVG para detalhes decorativos
+Detalhes gráficos desenvolvidos em SVG
 
-📐 Layout organizado e responsivo
+Layout minimalista e elegante
 
-💻 Desenvolvimento
+Desenvolvimento
 
-🧱 Estrutura construída em HTML5
+O projeto foi construído com HTML5, CSS3 e JavaScript, sem utilização de frameworks.
 
-🎨 Estilização feita com CSS3
+Foram utilizados recursos como Flexbox, CSS Grid, variáveis CSS, media queries e animações para estruturar e estilizar a página.
 
-⚡ Interações desenvolvidas com JavaScript
+Também foi implementado um sistema de revelação dos elementos durante a rolagem, utilizando JavaScript e IntersectionObserver.
 
-📱 Adaptação para desktop, tablet e celular
+Estrutura
 
-🔄 Animações suaves durante a navegação
+A página foi organizada em seções para apresentar a marca de forma progressiva:
 
-👀 Elementos aparecem conforme o usuário rola a página
+Hero — nome, slogan e identidade da boutique
 
-🌳 Experiência
+História — origem e conceito da marca
 
-A página foi dividida em seções para contar a história da marca:
+As Oliveiras — representação da relação entre mãe e filha
 
-🏠 Hero: apresenta a identidade e o slogan
+Propósito — valores da boutique
 
-📖 História: mostra a origem da boutique
+Contato — acesso ao Instagram
 
-🌳 As Oliveiras: representa mãe e filha através de duas árvores
+Footer — assinatura da marca
 
-💚 Propósito: apresenta os valores da marca
+Responsividade
 
-📲 Contato: direciona para o Instagram
+O layout possui adaptações para desktop, tablet e dispositivos móveis, garantindo que a composição, tipografia, navegação e espaçamentos se ajustem a diferentes tamanhos de tela.
 
-✨ Detalhes especiais
-
-O projeto utiliza CSS Grid, Flexbox, variáveis CSS, media queries, SVG e animações, criando uma experiência visual leve sem depender de frameworks.
-
-A ideia principal foi transformar o conceito de duas gerações cultivando juntas o mesmo sonho em elementos visuais dentro da própria página.
+A proposta foi criar uma experiência visual delicada e sofisticada, transformando o conceito de duas gerações cultivando juntas o mesmo sonho em elementos da própria interface.
