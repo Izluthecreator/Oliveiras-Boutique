@@ -995,7 +995,7 @@ noscript .reveal,
   margin-bottom: 1.4rem;
 
   font-family: "Jost", sans-serif;
-  font-size: 1.05rem;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: 0.01em;
 
@@ -1045,11 +1045,6 @@ noscript .reveal,
 }
 
 
-/*
-  Quando a imagem existir,
-  ela aparece automaticamente.
-*/
-
 .collection-card__image:has(img[src]:not([src=""])) img {
   opacity: 1;
 }
@@ -1058,8 +1053,6 @@ noscript .reveal,
   transform: scale(1.025);
 }
 
-
-/* ÍCONE ENQUANTO NÃO HOUVER FOTO */
 
 .collection-card__placeholder {
   position: absolute;
@@ -1092,14 +1085,12 @@ noscript .reveal,
   margin-top: 0.8rem;
 
   font-family: "Jost", sans-serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
   line-height: 1.5;
 
   color: #faf8f7;
 }
 
-
-/* ENDEREÇO + HORÁRIO */
 
 .collection-info {
   display: grid;
@@ -1148,14 +1139,12 @@ noscript .reveal,
 }
 
 .collection-info__item strong {
-  font-size: 0.88rem;
+  font-size: 0.90rem;
   font-weight: 600;
 
   color: #171616;
 }
 
-
-/* DEPOIMENTO */
 
 .collection-testimonial {
   display: flex;
@@ -1178,12 +1167,12 @@ noscript .reveal,
 }
 
 .collection-testimonial p {
-  font-size: 0.85rem;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
 .collection-testimonial__author {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #f7f5f4;
 }
 
