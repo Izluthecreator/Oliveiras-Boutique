@@ -1006,10 +1006,135 @@ noscript .reveal,
 /* CARDS */
 
 .collection-showcase__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  display: flex;
+
   gap: 14px;
+
+  transition: transform 0.45s ease;
+
+  will-change: transform;
+
 }
+
+
+/* ÁREA VISÍVEL DO CARROSSEL */
+
+.collection-carousel {
+
+  position: relative;
+
+  width: 100%;
+
+}
+
+
+.collection-carousel__viewport {
+
+  width: 100%;
+
+  overflow: hidden;
+
+}
+
+
+/* CADA CARD */
+
+.collection-carousel .collection-card {
+
+  flex: 0 0 calc((100% - 28px) / 3);
+
+  min-width: 0;
+
+}
+
+
+/* SETAS */
+
+.collection-carousel__btn {
+
+  position: absolute;
+
+  z-index: 10;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 38px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(80, 55, 40, 0.35);
+
+  border-radius: 50%;
+
+  background: rgba(254, 252, 252, 0.94);
+
+  color: #50392c;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 27px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    opacity 0.25s ease;
+
+}
+
+
+.collection-carousel__btn:hover {
+
+  background: #ffffff;
+
+  transform: translateY(-50%) scale(1.05);
+
+}
+
+
+.collection-carousel__btn--prev {
+
+  left: -19px;
+
+}
+
+
+.collection-carousel__btn--next {
+
+  right: -19px;
+
+}
+
+
+/* SETA DESATIVADA */
+
+.collection-carousel__btn:disabled {
+
+  opacity: 0.25;
+
+  cursor: default;
+
+  pointer-events: none;
+
+}
+
+
 
 .collection-card {
   display: block;
@@ -1752,3 +1877,36 @@ noscript .reveal,
   }
 
 }
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+  .collection-carousel .collection-card {
+
+    flex: 0 0 calc((100% - 14px) / 2);
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .collection-carousel .collection-card {
+
+    flex: 0 0 100%;
+
+  }
+
+  .collection-carousel__btn--prev {
+
+    left: 8px;
+
+  }
+
+  .collection-carousel__btn--next {
+
+    right: 8px;
+
+  }}
