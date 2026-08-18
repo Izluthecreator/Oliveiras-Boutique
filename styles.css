@@ -18,6 +18,12 @@
   --ink-soft: #756458;
   --line: #bca590;
 
+  /* FIX CONTRASTE — variantes escurecidas para uso sobre --nude-bg
+     (o terracota), que é mais claro/saturado que --nude-light e
+     quebrava o contraste mínimo AA (4.5:1 texto normal, 3:1 texto grande) */
+  --moss-dark-contrast: #3f4a2a;   /* ~3.7:1 sobre --nude-bg, ok para texto grande */
+  --brown-deep-contrast: #4a2f1f;  /* ~4.7:1 sobre --nude-bg, ok para texto pequeno */
+
   --shadow: 0 10px 40px rgba(63, 48, 40, 0.1);
 }
 
@@ -25,6 +31,7 @@ html {
   scroll-behavior: smooth;
   background: var(--nude-light);
 }
+
 /* =========================================================
    RESET
 ========================================================= */
@@ -35,12 +42,8 @@ html {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-   background: var(--nude-light);
+  background: var(--nude-light);
   color: var(--ink);
   font-family: "Jost", sans-serif;
   font-weight: 400;
@@ -208,6 +211,17 @@ button:focus-visible {
 
 .nav__links a:hover::after {
   width: 100%;
+}
+
+/* FIX CONTRASTE — quando o nav está "scrolled", o fundo passa a ser
+   --nude-bg (terracota); --ink-soft sobre esse fundo cai pra ~2.2:1.
+   Usamos --ink (cor cheia) só nesse estado. */
+.nav.scrolled .nav__links a {
+  color: var(--ink);
+}
+
+.nav.scrolled .nav__links a:hover {
+  color: var(--moss-dark-contrast);
 }
 
 /* =========================================================
@@ -389,7 +403,7 @@ button:focus-visible {
 ========================================================= */
 
 .hero__branchbg {
-   position: absolute;
+  position: absolute;
 
   top: -22%;
   left: 0;
@@ -401,7 +415,7 @@ button:focus-visible {
 
   pointer-events: none;
 
-  background-image: url("images/fundo-oliveiras-boutique.png");
+  background-image: url("images/fundo-oliveiras-boutique.webp");
 
   background-repeat: no-repeat;
   background-position: center;
@@ -537,7 +551,9 @@ button:focus-visible {
 
   text-transform: uppercase;
 
-  color: var(--brown-deep);
+  /* FIX CONTRASTE — era --brown-deep (~3.0:1 sobre --nude-bg);
+     texto pequeno em caixa alta precisa de 4.5:1 */
+  color: var(--brown-deep-contrast);
 }
 
 .hero__rule {
@@ -561,7 +577,9 @@ button:focus-visible {
 
   line-height: 1.2;
 
-  color: var(--moss-dark);
+  /* FIX CONTRASTE — era --moss-dark (~2.95:1 sobre --nude-bg,
+     não atinge nem o mínimo de 3:1 para texto grande) */
+  color: var(--moss-dark-contrast);
 }
 
 .hero__lede {
@@ -572,7 +590,9 @@ button:focus-visible {
   font-size: 1rem;
   line-height: 1.7;
 
-  color: var(--ink-soft);
+  /* FIX CONTRASTE — era --ink-soft (~2.2:1 sobre --nude-bg,
+     bem abaixo do mínimo de 4.5:1 para texto normal) */
+  color: var(--ink);
 }
 
 /* =========================================================
@@ -601,7 +621,8 @@ button:focus-visible {
 
   text-transform: uppercase;
 
-  color: var(--ink-soft);
+  /* FIX CONTRASTE — mesmo raciocínio do .hero__lede */
+  color: var(--ink);
 }
 
 .hero__scroll span.line {
@@ -648,6 +669,16 @@ button:focus-visible {
 }
 
 .reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FIX ROBUSTEZ — se o JS não carregar (erro, bloqueio, JS desabilitado),
+   o IntersectionObserver nunca adiciona a classe .in e esses textos
+   ficam permanentemente invisíveis. O <noscript> cobre o caso "sem JS";
+   o fallback por timeout (no script do HTML) cobre o caso "JS falhou". */
+noscript .reveal,
+.no-js .reveal {
   opacity: 1;
   transform: translateY(0);
 }
@@ -903,7 +934,7 @@ button:focus-visible {
 }
 
 .value {
-  padding: 2.6rem 1.6rem 2.2rem 0;
+  padding: 2.6rem 1.6rem 2.2rem 20px;
 
   border-bottom: 1px solid var(--line);
 }
@@ -918,15 +949,12 @@ button:focus-visible {
   width: 30px;
   height: 30px;
 
-  margin-left: 20px;
   margin-bottom: 1.3rem;
 
   color: var(--moss-dark);
 }
 
 .value h3 {
-  margin-left: 20px;
-
   margin-bottom: 0.6rem;
 
   font-family: "Fraunces", serif;
@@ -939,13 +967,224 @@ button:focus-visible {
 }
 
 .value p {
-  margin-left: 20px;
-
   font-size: 0.92rem;
 
   line-height: 1.7;
 
   color: var(--ink-soft);
+}
+
+
+
+.collection-showcase {
+  width: 100%;
+  background: #c4987b;
+  color: #f5eee3;
+  border-top: 1px solid rgba(245, 238, 227, 0.08);
+  border-bottom: 1px solid rgba(245, 238, 227, 0.08);
+}
+
+.collection-showcase__inner {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 4rem 6vw 3.5rem;
+}
+
+.collection-showcase h2 {
+  margin-bottom: 1.4rem;
+
+  font-family: "Jost", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+
+  color: #f5eee3;
+}
+
+
+/* CARDS */
+
+.collection-showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.collection-card {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.collection-card__image {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 0.78;
+
+  overflow: hidden;
+  border-radius: 11px;
+
+  background: #f9f8f8;
+}
+
+.collection-card__image img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0;
+  transition:
+    opacity 0.4s ease,
+    transform 0.5s ease;
+}
+
+
+/*
+  Quando a imagem existir,
+  ela aparece automaticamente.
+*/
+
+.collection-card__image:has(img[src]:not([src=""])) img {
+  opacity: 1;
+}
+
+.collection-card:hover img {
+  transform: scale(1.025);
+}
+
+
+/* ÍCONE ENQUANTO NÃO HOUVER FOTO */
+
+.collection-card__placeholder {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #a79b8f;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.collection-card__placeholder svg {
+  width: 34px;
+  height: 34px;
+}
+
+.collection-card:hover .collection-card__placeholder {
+  transform: scale(1.04);
+}
+
+
+/* TEXTO ABAIXO DOS CARDS */
+
+.collection-showcase__caption {
+  margin-top: 0.8rem;
+
+  font-family: "Jost", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+
+  color: #faf8f7;
+}
+
+
+/* ENDEREÇO + HORÁRIO */
+
+.collection-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+
+  margin-top: 3.2rem;
+  padding-top: 1.5rem;
+
+  border-top: 1px solid rgba(245, 238, 227, 0.13);
+}
+
+.collection-info__item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  min-height: 74px;
+  padding: 1rem 1.1rem;
+
+  background: #fefcfc;
+  border-radius: 9px;
+}
+
+.collection-info__item svg {
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+
+  color: #060606;
+}
+
+.collection-info__item div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.collection-info__item span {
+  font-size: 0.75rem;
+  line-height: 1.2;
+
+  color: #050505;
+}
+
+.collection-info__item strong {
+  font-size: 0.88rem;
+  font-weight: 600;
+
+  color: #171616;
+}
+
+
+/* DEPOIMENTO */
+
+.collection-testimonial {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+
+  border-top: 1px solid rgba(245, 238, 227, 0.13);
+
+  color: #fefdfd;
+}
+
+.collection-testimonial__quote {
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+
+  color: #f9fbf9;
+}
+
+.collection-testimonial p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.collection-testimonial__author {
+  font-size: 0.8rem;
+  color: #f7f5f4;
 }
 
 /* =========================================================
@@ -1142,7 +1381,9 @@ button:focus-visible {
 
   letter-spacing: 0.04em;
 
-  color: var(--ink-soft);
+  /* FIX CONTRASTE — o footer tem fundo --nude-bg (terracota);
+     --ink-soft caía pra ~2.2:1, bem abaixo do mínimo de 4.5:1 */
+  color: var(--ink);
 }
 
 /* =========================================================
@@ -1307,31 +1548,30 @@ button:focus-visible {
 
   .hero__branchbg {
     background-position: center;
-  background-size: cover;
+    background-size: cover;
 
-  opacity: 0.8;
+    opacity: 0.8;
 
-  filter:
-    saturate(0.6)
-    contrast(0.95)
-    brightness(1.12);
+    filter:
+      saturate(0.6)
+      contrast(0.95)
+      brightness(1.12);
 
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 12%,
-    black 82%,
-    transparent 100%
-  );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 12%,
+      black 82%,
+      transparent 100%
+    );
 
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 12%,
-    black 82%,
-    transparent 100%
-  );
-
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 12%,
+      black 82%,
+      transparent 100%
+    );
   }
 
   .hero__oliveira {
@@ -1386,7 +1626,7 @@ button:focus-visible {
   }
 
   .hero__branchbg {
-     opacity: 0.2;
+    opacity: 0.2;
   }
 
   .story {
@@ -1449,4 +1689,77 @@ button:focus-visible {
   .tree {
     width: 44vw;
   }
+}
+
+
+@media (max-width: 720px) {
+
+  .collection-showcase__inner {
+    padding: 3.5rem 5vw 3rem;
+  }
+
+  .collection-showcase__grid {
+    gap: 10px;
+  }
+
+  .collection-card__image {
+    border-radius: 8px;
+  }
+
+  .collection-card__placeholder svg {
+    width: 29px;
+    height: 29px;
+  }
+
+  .collection-info {
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    margin-top: 2.5rem;
+  }
+
+  .collection-info__item {
+    min-height: 68px;
+  }
+
+  .collection-testimonial {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .collection-showcase__inner {
+    padding: 3rem 20px 2.8rem;
+  }
+
+  .collection-showcase h2 {
+    font-size: 1rem;
+  }
+
+  .collection-showcase__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .collection-card__image {
+    aspect-ratio: 0.72;
+    border-radius: 7px;
+  }
+
+  .collection-showcase__caption {
+    font-size: 0.78rem;
+  }
+
+  .collection-info__item {
+    padding: 0.9rem;
+  }
+
+  .collection-testimonial p {
+    font-size: 0.78rem;
+  }
+
 }

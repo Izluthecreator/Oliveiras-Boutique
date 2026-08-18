@@ -4,10 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5eee3" />
-    <link rel="icon" type="image/png" href="images/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="icon" type="image/webp" href="images/apple-touch-icon.webp" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.webp" />
 
     <title>Oliveiras Boutique — Amor que se veste</title>
+
+    <!-- SEO/OG — antes ausente; sem isso, links compartilhados no
+         Instagram/WhatsApp aparecem sem preview customizado -->
+    <meta
+      name="description"
+      content="Oliveiras Boutique: moda feminina escolhida a dois olhares, mãe e filha. Peças pensadas para beleza, força e autenticidade de cada mulher."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Oliveiras Boutique — Amor que se veste"
+    />
+    <meta
+      property="og:description"
+      content="Duas gerações, um só sonho, costurado à mão em cada peça. Conheça a Oliveiras Boutique."
+    />
+    <meta
+      property="og:image"
+      content="https://oliveirasboutique.netlify.app/images/apple-touch-icon.webp"
+    />
+    <meta property="og:url" content="https://oliveirasboutique.netlify.app/" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,6 +40,19 @@
     />
 
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- FIX ROBUSTEZ — se JS estiver desabilitado, .reveal fica
+         permanentemente opacity:0 (definido no CSS). O CSS já cobre
+         `noscript .reveal`, mas esse noscript garante que o seletor
+         se aplique mesmo se a tag <noscript> não envolver o conteúdo. -->
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
+      </style>
+    </noscript>
   </head>
 
   <body>
@@ -25,7 +60,7 @@
       <div class="nav__mark">
         <a class="logo" href="#" id="logo-home">
           <img
-            src="images/oliveiras-nav-transparente.png"
+            src="images/oliveiras-nav-transparente.webp"
             alt="Oliveiras Boutique"
           />
 
@@ -122,7 +157,9 @@
         </div>
       </div>
     </section>
+     
 
+    
     <div class="divider" aria-hidden="true">
       <svg viewBox="0 0 100 30" fill="none">
         <path
@@ -132,6 +169,155 @@
         />
       </svg>
     </div>
+
+    <!-- NOVIDADES DA COLEÇÃO -->
+     
+    <section class="collection-showcase" id="novidades">
+      <div class="collection-showcase__inner">
+        <h2>Novidades da coleção</h2>
+
+        <div class="collection-showcase__grid">
+          <a href="#" class="collection-card">
+            <div class="collection-card__image">
+              <img
+                src="images/Teste roupas.jpg"
+                alt="Nova peça da coleção Oliveiras Boutique"
+              />
+
+              <div class="collection-card__placeholder">
+                <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                  <path
+                    d="M17 17.5C17 13.9 19.7 11 24 11s7 2.9 7 6.5c0 2.8-1.7 4.7-4.2 6.1l7.5 5.8c1.5 1.1 2.3 2.5 2.3 4.1H11.1c0-1.6.8-3 2.3-4.1l7.5-5.8C18.7 22.2 17 20.3 17 17.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M17 18h14"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="collection-card">
+            <div class="collection-card__image">
+              <img
+                src="images/Teste roupas.jpg"
+                alt="Nova peça da coleção Oliveiras Boutique"
+              />
+
+              <div class="collection-card__placeholder">
+                <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                  <path
+                    d="M17 17.5C17 13.9 19.7 11 24 11s7 2.9 7 6.5c0 2.8-1.7 4.7-4.2 6.1l7.5 5.8c1.5 1.1 2.3 2.5 2.3 4.1H11.1c0-1.6.8-3 2.3-4.1l7.5-5.8C18.7 22.2 17 20.3 17 17.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M17 18h14"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="collection-card">
+            <div class="collection-card__image">
+              <img
+                src="images/Teste roupas.jpg"
+                alt="Nova peça da coleção Oliveiras Boutique"
+              />
+
+              <div class="collection-card__placeholder">
+                <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                  <path
+                    d="M17 17.5C17 13.9 19.7 11 24 11s7 2.9 7 6.5c0 2.8-1.7 4.7-4.2 6.1l7.5 5.8c1.5 1.1 2.3 2.5 2.3 4.1H11.1c0-1.6.8-3 2.3-4.1l7.5-5.8C18.7 22.2 17 20.3 17 17.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M17 18h14"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <p class="collection-showcase__caption">
+          Fotos reais das peças, atualizadas toda semana
+        </p>
+
+        <div class="collection-info">
+          <div class="collection-info__item">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <circle
+                cx="12"
+                cy="9"
+                r="2.3"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+
+            <div>
+              <span>Endereço</span>
+              <strong>Rua Exemplo, 123 — Centro</strong>
+            </div>
+          </div>
+
+          <div class="collection-info__item">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle
+                cx="12"
+                cy="12"
+                r="8.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <path
+                d="M12 7v5l3.2 2"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+
+            <div>
+              <span>Horário</span>
+              <strong>Seg–sáb, 9h às 18h</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="collection-testimonial">
+          <span class="collection-testimonial__quote">99</span>
+
+          <p>"Atendimento incrível, peças lindas"</p>
+
+          <span class="collection-testimonial__author">
+            — Depoimento de cliente real
+          </span>
+        </div>
+      </div>
+    </section>
 
     <!-- TWO TREES -->
     <section class="trees" id="oliveiras">
@@ -147,7 +333,7 @@
 
         <div class="trees__pair reveal">
           <div class="tree t1">
-            <svg viewBox="0 0 200 240" fill="none">
+            <svg viewBox="0 0 200 240" fill="none" aria-hidden="true">
               <path
                 d="M100 240 L100 150"
                 stroke="#7C5A3D"
@@ -191,7 +377,7 @@
           </div>
 
           <div class="tree t2">
-            <svg viewBox="0 0 200 240" fill="none">
+            <svg viewBox="0 0 200 240" fill="none" aria-hidden="true">
               <path
                 d="M100 240 L100 155"
                 stroke="#7C5A3D"
@@ -279,6 +465,7 @@
               fill="none"
               stroke="currentColor"
               stroke-width="1.2"
+              aria-hidden="true"
             >
               <path
                 d="M12 21s-7-4.35-9.5-9C.5 8 3 4 7 4c2 0 4 1.5 5 3.5C13 5.5 15 4 17 4c4 0 6.5 4 4.5 8-2.5 4.65-9.5 9-9.5 9Z"
@@ -299,6 +486,7 @@
               fill="none"
               stroke="currentColor"
               stroke-width="1.2"
+              aria-hidden="true"
             >
               <path d="M12 2 4 6v6c0 5 3.5 8.7 8 10 4.5-1.3 8-5 8-10V6l-8-4Z" />
             </svg>
@@ -317,6 +505,7 @@
               fill="none"
               stroke="currentColor"
               stroke-width="1.2"
+              aria-hidden="true"
             >
               <circle cx="12" cy="8" r="4" />
               <path d="M4 21c1-4.5 4.5-7 8-7s7 2.5 8 7" />
@@ -333,6 +522,7 @@
       </div>
     </section>
 
+    
     <!-- CTA -->
     <section class="cta" id="contato">
       <svg
@@ -413,6 +603,10 @@
       );
 
       revealEls.forEach((el) => io.observe(el));
+
+      window.setTimeout(() => {
+        revealEls.forEach((el) => el.classList.add("in"));
+      }, 4000);
     </script>
 
     <script>
